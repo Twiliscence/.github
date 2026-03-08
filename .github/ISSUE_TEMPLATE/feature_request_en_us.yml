@@ -1,0 +1,54 @@
+name: Feature Request
+description: Suggest a new feature or improvement
+title: "[Feature] "
+labels: ["feature"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please describe the feature request clearly so the team can understand the problem, goal, and expected outcome.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What problem are you trying to solve?
+      placeholder: Describe the current issue or limitation
+    validations:
+      required: true
+
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: What is the expected outcome?
+      placeholder: What should be improved or achieved?
+
+  - type: textarea
+    id: requirement
+    attributes:
+      label: Functional Requirement
+      description: Describe what the system should be able to do
+      placeholder: |
+        Example:
+        - Users can export reports
+        - Reports can be downloaded as PDF
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance Criteria
+      description: How do we know this feature is complete?
+      placeholder: |
+        Example:
+        - Export button appears on the report page
+        - Clicking the button downloads a PDF
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context
+      description: Screenshots, references, or related issues

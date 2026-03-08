@@ -1,0 +1,127 @@
+name: Game Content Production Request
+description: A content production request submitted by the planning department to the technical department
+title: "[PRD] "
+labels: ["plan"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please convert abstract design concepts into concrete implementation tasks and provide a detailed explanation of the production request.
+
+        Try to answer the following questions as much as possible:
+        - What kind of system is this?
+        - What will the player do?
+        - What will happen in the system?
+        - What components does the system contain?
+        - What data is required?
+        - What does this implementation include?
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: System Summary
+      description: Describe this system in a few sentences
+      placeholder: |
+        Example:
+        Players can fish in water areas to obtain fish.
+        Some fish can be used for farming and cooking.
+
+    validations:
+      required: true
+
+  - type: textarea
+    id: player_loop
+    attributes:
+      label: Player Flow
+      description: How players interact with this system
+      placeholder: |
+        The player fishes in a water area. After a certain waiting time,
+        water droplet particle effects will appear on the water surface.
+
+        When the droplet overlaps with the fishing rod,
+        the player must interact within 1000 ms to obtain a fish
+        from the fish encyclopedia according to probability.
+
+  - type: textarea
+    id: mechanics
+    attributes:
+      label: System Mechanics
+      description: Main gameplay and logic
+      placeholder: |
+        Please provide as detailed a description as possible.
+
+  - type: textarea
+    id: systems
+    attributes:
+      label: System Components
+      description: What subsystems this feature includes
+      placeholder: |
+        Example:
+        - Fishing animation
+        - Random fish species
+        - Conditional fish species
+        - Fishing rod upgrades
+        - Fishing rod attributes
+
+  - type: textarea
+    id: data_requirements
+    attributes:
+      label: Required Data
+      description: What data tables or content the system needs
+      placeholder: |
+        Example:
+        - Fish species list
+        - Water area list
+        - Drop probability
+        - Fishing rod attributes
+
+  - type: textarea
+    id: balancing
+    attributes:
+      label: Balancing and Probabilities
+      description: Drop rates, probabilities, limitations, etc.
+      placeholder: |
+        Example:
+        iron fish 60%
+        silver fish 30%
+        golden fish 10%
+
+  - type: textarea
+    id: interactions
+    attributes:
+      label: Interactions With Other Systems
+      description: Whether it affects other systems
+      placeholder: |
+        Example:
+        - Cooking system
+        - Farming system
+        - Economy system
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Implementation Scope
+      description: What this issue needs to complete
+      placeholder: |
+        Example:
+        - Basic fishing
+        - Fish generation
+        - Drop probabilities
+
+  - type: textarea
+    id: future
+    attributes:
+      label: Future Expansion
+      description: Features that may be added in the future
+      placeholder: |
+        Example:
+        - Fish farming
+        - Rare fish pets
+        - Special fish species
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: Planning documents or design drafts

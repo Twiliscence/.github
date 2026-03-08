@@ -1,0 +1,54 @@
+name: 功能需求
+description: 提出新功能或改善現有功能
+title: "[Feature] "
+labels: ["feature"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        請清楚描述需求，讓團隊能理解問題、目標與預期成果。
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: 問題背景
+      description: 目前遇到什麼問題或限制？
+      placeholder: 描述目前的情境或痛點
+    validations:
+      required: true
+
+  - type: textarea
+    id: goal
+    attributes:
+      label: 需求目標
+      description: 希望達成什麼結果？
+      placeholder: 這個需求希望改善什麼？
+
+  - type: textarea
+    id: requirement
+    attributes:
+      label: 功能需求
+      description: 系統需要具備哪些能力？
+      placeholder: |
+        範例：
+        - 使用者可以匯出報表
+        - 報表可下載為 PDF
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 驗收條件
+      description: 如何判斷此功能完成？
+      placeholder: |
+        範例：
+        - 報表頁面出現匯出按鈕
+        - 點擊後下載 PDF
+
+  - type: textarea
+    id: context
+    attributes:
+      label: 補充資訊
+      description: 相關截圖、文件或參考資料

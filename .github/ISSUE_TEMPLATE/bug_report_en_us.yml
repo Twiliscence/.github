@@ -1,0 +1,54 @@
+name: Bug Report
+description: Report a system error or unexpected behavior
+title: "[BUG] "
+labels: ["bug"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please provide enough information to help the team reproduce and fix this issue.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Describe what actually happened and what you expected to happen instead.
+      placeholder: |
+        Clearly describe the issue you encountered.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Explain how to reproduce this issue.
+      placeholder: |
+        1. Go to ...
+        2. Click ...
+        3. Error occurs
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Log / Error message
+      description: If there are related logs or stack traces, paste them here.
+      render: shell
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Which environment the issue occurred in
+      placeholder: production / staging / local
+
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: I confirm this issue has not already been reported
+          required: true
