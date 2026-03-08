@@ -37,7 +37,7 @@ body:
         
         Bad example:
         > The player can walk to an ore node and press collect. The character will start mining, and after finishing will receive different types of minerals.
-        <sub>This describes how the player operates, not the system design.</sub>
+        This describes how the player operates, not the system design.
       placeholder: |
         Create a “System Name” system with the purpose of “the function of this system”.
         The system includes “Function A”, “Function B”, and “Function C”.
