@@ -1,4 +1,4 @@
-name: 回報問題
+name: [BUG] 回報問題
 description: 回報系統錯誤或非預期行為
 title: "[BUG] "
 labels: ["bug"]

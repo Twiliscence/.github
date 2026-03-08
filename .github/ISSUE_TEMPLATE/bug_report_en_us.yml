@@ -1,4 +1,4 @@
-name: Bug Report
+name: [BUG] Bug Report
 description: Report a system error or unexpected behavior
 title: "[BUG] "
 labels: ["bug"]
