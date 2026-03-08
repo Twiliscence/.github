@@ -1,0 +1,54 @@
+name: Bug 回報
+description: 回報系統錯誤
+title: "[BUG] "
+labels: ["bug"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        請提供足夠資訊以協助團隊重現並修復此問題。
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 發生了什麼問題？
+      description: 請描述實際發生的情況，以及你預期應該發生的結果。
+      placeholder: |
+        清楚描述遇到的問題。
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 重現步驟
+      description: 請說明如何重現此問題。
+      placeholder: |
+        1. 前往 ...
+        2. 點擊 ...
+        3. 發生錯誤
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Log / 錯誤訊息
+      description: 若有相關 log 或 stack trace，請貼在此處
+      render: shell
+
+  - type: input
+    id: environment
+    attributes:
+      label: 環境
+      description: 問題發生在哪個環境
+      placeholder: production / staging / local
+
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: 確認事項
+      options:
+        - label: 我已確認此問題尚未被回報
+          required: true
