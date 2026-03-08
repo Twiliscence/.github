@@ -1,5 +1,5 @@
-name: [PRD] 遊戲內容製作需求
-description: 企劃部門向技術部門提出的內容製作要求
+name: "[PRD] 遊戲內容製作需求"
+description: "企劃部門向技術部門提出的內容製作要求"
 title: "[PRD] "
 labels: ["plan"]
 
@@ -9,24 +9,24 @@ body:
       value: |
         請將抽象的企劃概念轉為具體需要實作的事項後，詳細解釋這個製作需求。
         這個 issue 可以對企劃部門提出插件功能需求，將它實作進遊戲內。
-        
+
         請遵守以下規則：
         1. 此份文件請使用正確的基本語法，包含使用正確的全形或半形標點符號。
         2. 僅有「系統級」的功能需求才需要在此開啟 issue。
         3. 請為您的內容增加適當的排版與文字格式，以方便團隊協作。
 
-  - type: textarea
-    id: summary
+  - type: markdown
     attributes:
-      label: 系統描述
-      description: |
+      value: |
+        ### 系統描述
+
         請詳細說明這個系統的內容。
-        
+
         請寫出：
         1. 這個系統是做什麼的
         2. 這個系統包含哪些主要功能或部分
         3. 如果只做第一版（MVP），最基本要做到哪些功能
-        
+
         請只描述系統本身的設計，不要寫玩家操作流程或故事情境。
         > 請不要寫出：玩家或使用者操作流程、遊玩情境或故事、UI 操作步驟、很細的數值設定。
 
@@ -34,114 +34,148 @@ body:
         > 製作一個礦物系統，讓玩家能夠透過此系統取得遊戲資源。
         > 系統包含礦物生成、採集功能與資源掉落。
         > MVP 階段需要支援礦物生成、採集礦物以及獲得資源。
-        
+
         爛的範例：
         > 玩家可以走到礦石旁邊按採集，角色會開始挖礦，完成後會拿到不同種類的礦物。
-        這是在描述玩家怎麼操作，而不是在說明系統設計。
+        > 這是在描述玩家怎麼操作，而不是在說明系統設計。
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: 系統描述
+      description: "請描述系統功能、主要組成，以及 MVP 階段需要做到的最低範圍。"
       placeholder: |
         製作一個「系統名稱」，用途是「這個系統的功能」。
         系統包含「功能 A」、「功能 B」、「功能 C」。
         MVP 階段需要做到「功能 A」、「功能 B」、「功能 C」。
-
     validations:
       required: true
 
-  - type: textarea
-    id: player_loop
+  - type: markdown
     attributes:
-      label: 玩家流程
-      description: |
+      value: |
+        ### 玩家流程
+
         請描述玩家如何從開始到結束與此系統互動。
-        
+
         需要包含：
         - 玩家如何開始使用此系統
         - 玩家在過程中會做哪些操作
         - 系統會給玩家哪些回饋
         - 最後玩家會獲得什麼結果
-        
+
         請專注在玩家的互動流程，不需要寫詳細規則、數值或機率。
+
+  - type: textarea
+    id: player_loop
+    attributes:
+      label: 玩家流程
+      description: "描述玩家從進入系統到獲得結果的完整互動流程。"
       placeholder: |
         玩家在水域中開始釣魚並等待魚上鉤。
         當魚咬鉤時，玩家需要進行互動操作。
         成功後玩家會獲得魚類並登入圖鑑。
 
-  - type: textarea
-    id: systems
+  - type: markdown
     attributes:
-      label: 系統組成
-      description: |
+      value: |
+        ### 系統組成
+
         請列出這個系統底下包含的功能組成項目。
-        
+
         這裡的「組成項目」是指：
         - 能獨立說明用途的功能部分
         - 會影響玩法或系統運作的內容
         - 之後可能需要分開設計、分開製作或分開調整的部分
-        
+
         不用切得太細，不要寫成操作步驟，也不要只寫美術或 UI 物件名稱。
+
+  - type: textarea
+    id: systems
+    attributes:
+      label: 系統組成
+      description: "列出系統的主要功能組成項目，並簡述各項用途。"
       placeholder: |
         - 魚種生成：決定玩家能釣到哪些魚
         - 釣竿屬性：影響釣魚成功率或結果
         - 釣魚判定：決定這次是否成功釣到魚
         - 條件魚種：特定時間、地點或條件才會出現的魚
 
+  - type: markdown
+    attributes:
+      value: |
+        ### 需要的資料
+
+        請列出此系統所需的資料，包含：
+        - 資料名稱
+        - 資料用途
+        - 資料所在位置（文件或資料表連結）
+
+        如果資料尚未建立，請標註「尚未建立」。
+
   - type: textarea
     id: data_requirements
     attributes:
       label: 需要的資料
-      description: |
-        這個系統需要哪些資料？
-        
-        請列出：
-        - 資料名稱
-        - 資料用途
-        - 資料所在位置（文件或資料表連結）
-        
-        如果資料尚未建立，請標註「尚未建立」。
+      description: "列出系統所需資料的名稱、用途與來源連結。"
       placeholder: |
         - 資料名稱：用途說明 - 連結
         - 資料名稱：用途說明 - 連結
         - 資料名稱：用途說明 - 連結
         - 資料名稱：用途說明 - 連結
+
+  - type: markdown
+    attributes:
+      value: |
+        ### 與其他系統互動
+
+        此系統是否會與其他系統互動或互相影響？
+
+        請列出相關系統，並簡單說明影響方式或關聯。
 
   - type: textarea
     id: interactions
     attributes:
       label: 與其他系統互動
-      description: |
-        此系統是否會與其他系統互動或互相影響？
-
-        請列出相關系統，並簡單說明影響方式或關聯。
+      description: "列出與此系統有關聯的其他系統，並說明互動方式。"
       placeholder: |
         - 料理系統：魚類可以作為料理材料
         - 養殖系統：部分魚類可用於養殖
+
+  - type: markdown
+    attributes:
+      value: |
+        ### 未來擴展
+
+        此系統在未來版本可能擴充的內容。
+
+        請列出與此系統相關的功能延伸或升級方向，不需要非常詳細。
 
   - type: textarea
     id: future
     attributes:
       label: 未來擴展
-      description: |
-        此系統在未來版本可能擴充的內容。
-        
-        請列出與此系統相關的功能延伸或升級方向。
-        不需要非常詳細，只需簡單描述可能的擴展。
+      description: "簡述此系統未來可能新增的功能或擴展方向。"
       placeholder: |
         - 魚類養殖：玩家可以培養魚類
         - 稀有魚寵物：部分魚可成為寵物
+
+  - type: markdown
+    attributes:
+      value: |
+        ### 參考資料
+
+        與此系統相關的文件或設計資料，可包含：
+        - 企劃文件
+        - 設計稿
+        - 資料表
+        - 外部參考（其他遊戲或範例）
 
   - type: textarea
     id: references
     attributes:
       label: 參考資料
-      description: |
-        與此系統相關的文件或設計資料。
-        
-        可以包含：
-        - 企劃文件
-        - 設計稿
-        - 資料表
-        - 外部參考（其他遊戲或範例）
-        
-        請提供連結。
+      description: "提供與此系統相關的文件、設計稿或外部參考連結。"
       placeholder: |
         - 企劃文件：https://...
         - UI 設計：https://...
