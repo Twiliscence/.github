@@ -1,5 +1,5 @@
-name: [PRD] Game Content Production Request
-description: A content production request submitted by the planning department to the technical department
+name: [PRD] Game Content Production Requirement
+description: Content production request submitted by the design department to the technical department
 title: "[PRD] "
 labels: ["plan"]
 
@@ -7,25 +7,41 @@ body:
   - type: markdown
     attributes:
       value: |
-        Please convert abstract design concepts into concrete implementation tasks and provide a detailed explanation of the production request.
-
-        Try to answer the following questions as much as possible:
-        - What kind of system is this?
-        - What will the player do?
-        - What will happen in the system?
-        - What components does the system contain?
-        - What data is required?
-        - What does this implementation include?
+        Please convert abstract design concepts into concrete implementation items and provide a detailed explanation of this production requirement.
+        This issue can be used by the design department to request plugin features to be implemented in the game.
+        
+        Please follow the rules below:
+        1. This document must use correct basic syntax, including proper full-width or half-width punctuation.
+        2. Only “system-level” feature requirements should have an issue created here.
+        3. Please add appropriate formatting and text structure to your content to facilitate team collaboration.
 
   - type: textarea
     id: summary
     attributes:
-      label: System Summary
-      description: Describe this system in a few sentences
+      label: System Description
+      description: |
+        Please provide a detailed explanation of this system.
+        
+        Please include:
+        1. What this system is for
+        2. What major functions or components the system includes
+        3. If only the first version (MVP) is implemented, what are the most basic functions required
+        
+        Please describe only the system design itself. Do not describe player operation flow or story scenarios.
+        > Do not include: player or user operation flow, gameplay scenarios or narrative, UI interaction steps, or highly detailed numerical settings.
+
+        Good example:
+        > Create a mining system that allows players to obtain game resources through this system.
+        > The system includes mineral generation, harvesting functionality, and resource drops.
+        > The MVP version needs to support mineral generation, mining, and obtaining resources.
+        
+        Bad example:
+        > The player can walk to an ore node and press collect. The character will start mining, and after finishing will receive different types of minerals.
+        <sub>This describes how the player operates, not the system design.</sub>
       placeholder: |
-        Example:
-        Players can fish in water areas to obtain fish.
-        Some fish can be used for farming and cooking.
+        Create a “System Name” system with the purpose of “the function of this system”.
+        The system includes “Function A”, “Function B”, and “Function C”.
+        The MVP version must include “Function A”, “Function B”, and “Function C”.
 
     validations:
       required: true
@@ -34,94 +50,99 @@ body:
     id: player_loop
     attributes:
       label: Player Flow
-      description: How players interact with this system
+      description: |
+        Please describe how players interact with this system from start to finish.
+        
+        It should include:
+        - How players begin using the system
+        - What actions players perform during the process
+        - What feedback the system provides to the player
+        - What result the player ultimately receives
+        
+        Focus on the player's interaction flow. Detailed rules, numbers, or probabilities are not required.
       placeholder: |
-        The player fishes in a water area. After a certain waiting time,
-        water droplet particle effects will appear on the water surface.
-
-        When the droplet overlaps with the fishing rod,
-        the player must interact within 1000 ms to obtain a fish
-        from the fish encyclopedia according to probability.
-
-  - type: textarea
-    id: mechanics
-    attributes:
-      label: System Mechanics
-      description: Main gameplay and logic
-      placeholder: |
-        Please provide as detailed a description as possible.
+        The player begins fishing in a body of water and waits for a fish to bite.
+        When a fish bites, the player performs an interaction action.
+        If successful, the player obtains the fish and it is recorded in the collection log.
 
   - type: textarea
     id: systems
     attributes:
       label: System Components
-      description: What subsystems this feature includes
+      description: |
+        Please list the functional components included in this system.
+        
+        “Components” here refer to:
+        - Functional parts that can be described independently
+        - Elements that affect gameplay or system operation
+        - Parts that may later require separate design, implementation, or adjustment
+        
+        Do not split them too finely. Do not write them as operation steps, and do not list only art or UI object names.
       placeholder: |
-        Example:
-        - Fishing animation
-        - Random fish species
-        - Conditional fish species
-        - Fishing rod upgrades
-        - Fishing rod attributes
+        - Fish Generation: Determines which fish the player can catch
+        - Fishing Rod Attributes: Affects fishing success rate or outcomes
+        - Fishing Resolution: Determines whether the player successfully catches a fish
+        - Conditional Fish: Fish that only appear under specific time, location, or conditions
 
   - type: textarea
     id: data_requirements
     attributes:
       label: Required Data
-      description: What data tables or content the system needs
+      description: |
+        What data is required for this system?
+        
+        Please list:
+        - Data name
+        - Data purpose
+        - Data location (document or database link)
+        
+        If the data has not been created yet, please mark it as “Not yet created”.
       placeholder: |
-        Example:
-        - Fish species list
-        - Water area list
-        - Drop probability
-        - Fishing rod attributes
-
-  - type: textarea
-    id: balancing
-    attributes:
-      label: Balancing and Probabilities
-      description: Drop rates, probabilities, limitations, etc.
-      placeholder: |
-        Example:
-        iron fish 60%
-        silver fish 30%
-        golden fish 10%
+        - Data Name: Description of purpose - Link
+        - Data Name: Description of purpose - Link
+        - Data Name: Description of purpose - Link
+        - Data Name: Description of purpose - Link
 
   - type: textarea
     id: interactions
     attributes:
-      label: Interactions With Other Systems
-      description: Whether it affects other systems
+      label: Interaction With Other Systems
+      description: |
+        Does this system interact with or affect other systems?
+        
+        Please list the related systems and briefly describe the interaction or relationship.
       placeholder: |
-        Example:
-        - Cooking system
-        - Farming system
-        - Economy system
-
-  - type: textarea
-    id: scope
-    attributes:
-      label: Implementation Scope
-      description: What this issue needs to complete
-      placeholder: |
-        Example:
-        - Basic fishing
-        - Fish generation
-        - Drop probabilities
+        - Cooking System: Fish can be used as cooking ingredients
+        - Breeding System: Some fish can be used for breeding
 
   - type: textarea
     id: future
     attributes:
       label: Future Expansion
-      description: Features that may be added in the future
+      description: |
+        Possible expansions for this system in future versions.
+        
+        Please list potential feature extensions or upgrade directions related to this system.
+        Detailed descriptions are not necessary. A brief outline of possible expansions is sufficient.
       placeholder: |
-        Example:
-        - Fish farming
-        - Rare fish pets
-        - Special fish species
+        - Fish Breeding: Players can raise fish
+        - Rare Fish Pets: Some fish can become pets
 
   - type: textarea
     id: references
     attributes:
-      label: References
-      description: Planning documents or design drafts
+      label: Reference Materials
+      description: |
+        Documents or design materials related to this system.
+        
+        This may include:
+        - Design documents
+        - Design drafts
+        - Data tables
+        - External references (other games or examples)
+        
+        Please provide links.
+      placeholder: |
+        - Design Document: https://...
+        - UI Design: https://...
+        - Data Table: https://...
